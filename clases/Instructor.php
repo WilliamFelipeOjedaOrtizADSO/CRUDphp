@@ -3,6 +3,13 @@ include_once("Persona.php");
 class Instructor extends Persona {
     private $sueldo;
     private $horario;
+    
+    public function __construct(
+        PDO $connection
+    )
+    {
+        parent::__construct("id", "users", $connection);
+    }
 
 
 public function getSueldo(){

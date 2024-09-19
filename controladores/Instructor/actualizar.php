@@ -1,12 +1,12 @@
 <?php
 
-require_once(__DIR__ ."/../libs/Database.php");
-require_once(__DIR__ ."/../libs/Modelo.php");
-include_once("../clases/Aprendiz.php");
+require_once(__DIR__ ."/../../libs/Database.php");
+require_once(__DIR__ ."/../../libs/Modelo.php");
+include_once("../../clases/Instructor.php");
 
 $datebase = new Database();
     $connection = $datebase->getConnection();
-    $aprendiz = new Aprendiz($connection);
+    $Instructor = new Instructor($connection);
 
 
 $id = $_REQUEST['id'];
@@ -31,12 +31,12 @@ $nombre = isset($_POST['first_name']) ?
  ($_POST['dni'] != "" ? $_POST['dni'] : false) :
  false;
 
- $promedio = isset($_POST['average']) ?
- ($_POST['average'] != "" ? $_POST['average'] : false) :
+ $salario = isset($_POST['salary']) ?
+ ($_POST['salary'] != "" ? $_POST['salary'] : false) :
  false;
 
- $cuenta = isset($_POST['user_account']) ?
- ($_POST['user_account'] != "" ? $_POST['user_account'] : false) :
+ $horario = isset($_POST['user_schedule']) ?
+ ($_POST['user_schedule'] != "" ? $_POST['user_schedule'] : false) :
  false;
 
  $fecha = isset($_POST['birthdate']) ?
@@ -50,8 +50,8 @@ $nombre = isset($_POST['first_name']) ?
     "email" => $correo, 
     "phone" => $telefono,
     "dni"=> $dni,
-    "user_account"=> $cuenta,
-    "average"=> $promedio,
+    "user_schedule"=> $horario,
+    "salary"=> $salario,
     "birthdate" =>$fecha
     ]);
 

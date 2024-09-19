@@ -1,16 +1,16 @@
 <?php
 
-require_once(__DIR__ ."/../libs/Database.php");
-require_once(__DIR__ ."/../libs/Modelo.php");
-include_once("../clases/Aprendiz.php");
+require_once(__DIR__ ."/../../libs/Database.php");
+require_once(__DIR__ ."/../../libs/Modelo.php");
+include_once("../../clases/Instructor.php");
 
 
 $datebase = new Database();
     $connection = $datebase->getConnection();
-    $aprendiz = new Aprendiz($connection);
+    $Instructor = new Instructor($connection);
 
 
-    $lista = $aprendiz->getAll();
+    $lista = $Instructor->getAll();
 
     ?>
 
@@ -22,8 +22,8 @@ $datebase = new Database();
         <th>Correo</th>
         <th>Telefono</th>
         <th>DNI</th>
-        <th>Ficha</th>
-        <th>Promedio</th>
+        <th>Horario</th>
+        <th>Salario</th>
         <th>Fecha de Nacimiento</th>
         <th>Acciones</th>
         
@@ -40,8 +40,8 @@ $datebase = new Database();
             <td> <?=$lista[$i]['email'] ?></td>
             <td> <?=$lista[$i]['phone'] ?></td>
             <td> <?=$lista[$i]['dni'] ?></td>
-            <td> <?=$lista[$i]['user_account'] ?></td>
-            <td> <?=$lista[$i]['average'] ?></td>
+            <td> <?=$lista[$i]['user_schedule'] ?></td>
+            <td> <?=$lista[$i]['salary'] ?></td>
             <td> <?=$lista[$i]['birthdate'] ?></td>
 
 

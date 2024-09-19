@@ -8,7 +8,8 @@
     </head>
 <body>
 <div class="form_container">
-<form action="controladores/Aprendiz/guardar.php" method="post">
+<form action="controladores/Instructor/guardar.php" method="post">
+
     
     <label for="first_name">Nombre</label>
     <input type="text" name="first_name" id="first_name">
@@ -25,11 +26,16 @@
     <label for="dni">DNI</label>
     <input type="text" name="dni" id="dni">
 
-    <label for="user_account">Ficha</label>
-    <input type="text" name="user_account" id="user_account">
+    <label for="salary">Sueldo</label>
+    <input type="text" name="salary" id="salary">
 
- 
+    <label for="">Horario</label>
 
+    <select name="user_schedule" id="user_schedule">Rol
+        <option value="mañana">Mañana</option>
+        <option value="tarde">Tarde</option>
+        <option value="noche">Noche</option>
+    </select>
 
     <button type="submit">Enviar</button>
 

@@ -1,8 +1,8 @@
 <?php
 
-require_once(__DIR__ ."/../libs/Database.php");
-require_once(__DIR__ ."/../libs/Modelo.php");
-include_once("../clases/Aprendiz.php");
+require_once(__DIR__ ."/../../libs/Database.php");
+require_once(__DIR__ ."/../../libs/Modelo.php");
+include_once("../../clases/Aprendiz.php");
 
 $nombre = isset($_POST['first_name']) ?
  ($_POST['first_name'] != "" ? $_POST['first_name'] : false) :
@@ -44,7 +44,7 @@ $dni
         ]);
 
         if ($valor != null) {
-            header('location:/adso/2696521/controladores/listar.php');
+            header('location:/adso/2696521/controladores/Aprendiz/listar.php');
         }
 
 }else {
